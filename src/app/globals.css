@@ -34,18 +34,85 @@
 }
 
 @keyframes accordion-down {
-  from { height: 0; }
-  to { height: var(--radix-accordion-content-height); }
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
+  }
 }
 
 @keyframes accordion-up {
-  from { height: var(--radix-accordion-content-height); }
-  to { height: 0; }
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+
+  to {
+    height: 0;
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 1; transform: scale(1); filter: brightness(1); }
-  50% { opacity: .8; transform: scale(1.05); filter: brightness(1.2); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  50% {
+    opacity: .8;
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes notification-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(0, 240, 255, 0);
+  }
 }
 
 :root {
@@ -56,10 +123,12 @@
   --card-foreground: #ffffff;
   --popover: rgba(10, 10, 15, 0.8);
   --popover-foreground: #ffffff;
-  --primary: #00f0ff; /* Neon cyan */
+  --primary: #00f0ff;
+  /* Neon cyan */
   --primary-foreground: #000000;
   --secondary: rgba(255, 0, 128, 0.2);
-  --secondary-foreground: #ff0080; /* Neon pink/magenta */
+  --secondary-foreground: #ff0080;
+  /* Neon pink/magenta */
   --muted: rgba(255, 255, 255, 0.1);
   --muted-foreground: #a1a1aa;
   --accent: rgba(0, 240, 255, 0.15);
@@ -76,7 +145,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-outfit), sans-serif;
-  background-image: 
+  background-image:
     radial-gradient(circle at 15% 50%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 85% 30%, rgba(255, 0, 128, 0.06) 0%, transparent 50%);
   background-attachment: fixed;
